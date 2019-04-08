@@ -1,3 +1,19 @@
-<p>
-  poll works!
-</p>
+<h2>Subra vs Farnam!</h2>
+
+<ul class="poll_results">
+	<li>
+		Farnam {{votes.farnam}} votes
+		<button (click)="onVote('farnam')">vote</button>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</li>
+
+	<li>
+		Subra {{votes.subra}} votes
+		<button (click)="onVote('subra')">vote</button>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</li>
+</ul>
