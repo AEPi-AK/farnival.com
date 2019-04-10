@@ -19,10 +19,15 @@ export class PollComponent implements OnInit {
 
   onVote(name: string) {
   	this.votes[name] += 1;
+  	this.updateResults(name);
+  }
+
+  updateResults(name: string) {
+  	this.pollService.updateResults(name);
   }
 
   getResults() {
-  	this.votes = this.pollService.getResults();
+  	this.pollService.getResults().subscribe(votes => this.votes = votes);
   }
 
 }

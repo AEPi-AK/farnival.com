@@ -1,11 +1,13 @@
 import os
 
 from flask import Flask
-
+from flask_cors import CORS
+from flask import json
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    CORS(app)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
@@ -37,8 +39,9 @@ def create_app(test_config=None):
         d = db.get_db()
         query = d.execute('SELECT farnam, subra FROM VOTES;').fetchone()
         if query is not None:
-            return "{farnam: " + str(query["farnam"]) + ", subra: " + str(
-                query["subra"]) + "}"
+            return json.dumps({"farnam":query["farnam"],"subra":query["subra"]})
+            # return "{'farnam': " + str(query["farnam"]) + ", 'subra': " + str(
+            # query["subra"]) + "}"
         else:
             return "{farnam: -1, subra: -1}"
 
@@ -56,8 +59,8 @@ def create_app(test_config=None):
         d.commit()
         return votes()
 
+ 
+
     return app
 
 
-if __name__ == '__main__':
-    create_app()
