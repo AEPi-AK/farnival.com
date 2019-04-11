@@ -50,11 +50,11 @@ form {
 }
 
 .submit {
-    background: 0;
-    font-size: 25px;
-    margin-top: 3px;
+    /* background: 0; */
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .submit:active {
-    font-size: 30px;
+    background-color: gray;
 }
