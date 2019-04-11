@@ -10,7 +10,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LockScreenComponent implements OnInit {
 
   has_failed: boolean;
-  @Input() guess: string;
+  guess: string;
 
   constructor(private authenticationService: AuthenticationService) { }
 
@@ -19,6 +19,7 @@ export class LockScreenComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.guess);
     this.authenticationService.checkAuth(this.guess);
     this.has_failed = !this.authenticationService.unlocked.auth;
   }

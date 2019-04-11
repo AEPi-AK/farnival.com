@@ -2,7 +2,7 @@
 	<label>Enter Password</label>
 	<img class="lock" src="assets/lock.svg" />
 	<form (ngSubmit)="submit()">
-		<input [(ngModel)]="guess" autofocus>
+		<input id="guess" type="text" [(ngModel)]="guess" name="guess" autofocus>
 		<input class="submit" type="submit" value="SUBMIT" />
 	</form>
 </div>
