@@ -20,7 +20,7 @@ export class LockScreenComponent implements OnInit {
 
   submit() {
     this.authenticationService.checkAuth(this.guess);
-    this.has_failed = this.authenticationService.unlocked.auth;
+    this.has_failed = !this.authenticationService.unlocked.auth;
   }
 
 }
