@@ -1,11 +1,9 @@
-
 <div>
-	<label>Enter password</label>
+	<label>Enter Password</label>
+	<img class="lock" src="assets/lock.svg" />
 	<input [(ngModel)]="guess">
 </div>
 
 <button (click)=submit()>submit</button>
 
 <div *ngIf="has_failed">Incorrect. Please try again!</div>
-
-

@@ -1,0 +1,35 @@
+:host {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    padding-top: 50px;
+    font-size: 18px;
+}
+
+label {
+    color: #07FF00;
+    font-size: 24px;
+}
+
+input {
+    border-radius: 10px;
+    outline: 0;
+    height: 40px;
+    border: 0;
+    box-shadow: 0 0 5px black inset;
+}
+
+.lock {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+button {
+    margin-top: 15px;
+}
