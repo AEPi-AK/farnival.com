@@ -1,0 +1,11 @@
+
+<div>
+	<label>Enter password</label>
+	<input [(ngModel)]="guess">
+</div>
+
+<button (click)=submit()>submit</button>
+
+<div *ngIf="has_failed">Incorrect. Please try again!</div>
+
+

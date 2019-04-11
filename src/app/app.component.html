@@ -1,11 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>Welcome to {{ title }}!</h1>
+<div *ngIf="authenticationService.unlocked.auth">
+	<app-main-page></app-main-page>
+</div>
 
-<nav>
-  <a routerLink="/poll"> Poll </a>
-  <a routerLink="/memes"> Memes </a>
-  <a routerLink="/video"> Video </a>
-  <a href="http://www.ucstones.com" target="_blank"> UC Stones </a>
-</nav>
-
-<router-outlet></router-outlet>
+<div *ngIf="!authenticationService.unlocked.auth">
+	<app-lock-screen></app-lock-screen>
+</div>
