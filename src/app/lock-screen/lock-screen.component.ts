@@ -15,12 +15,13 @@ export class LockScreenComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-  	this.has_failed = false;
+    this.has_failed = false;
   }
 
   submit() {
-  	this.authenticationService.checkAuth(this.guess);
-  	this.has_failed = this.authenticationService.unlocked.auth;
+    this.authenticationService.checkAuth(this.guess);
+    this.has_failed = true;
+    // this.has_failed = this.authenticationService.unlocked.auth;
   }
 
 }

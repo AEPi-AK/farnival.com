@@ -32,4 +32,13 @@ input {
 
 button {
     margin-top: 15px;
+    background-color: white;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.failed {
+    margin-top: 50px;
+    color: red;
+    font-size: 20px;
 }
