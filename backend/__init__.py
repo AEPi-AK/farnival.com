@@ -81,7 +81,7 @@ def create_app(test_config=None):
         top_caption = " ".join(cap_split[0:(int)(len(cap_split)/2)])
         bottom_caption = " ".join(cap_split[(int)(len(cap_split)/2):])
         make_meme(top_caption,bottom_caption,photo)
-        send_file("temp.png")
+        return send_file("../temp.png")
 
     return app
 
