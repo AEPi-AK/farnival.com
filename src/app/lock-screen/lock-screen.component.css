@@ -42,3 +42,19 @@ button {
     color: red;
     font-size: 20px;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    background: 0;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+.submit:active {
+    font-size: 30px;
+}

@@ -1,9 +1,11 @@
 <div>
 	<label>Enter Password</label>
 	<img class="lock" src="assets/lock.svg" />
-	<input [(ngModel)]="guess">
+	<form (ngSubmit)="submit()">
+		<input [(ngModel)]="guess" autofocus>
+		<input class="submit" type="submit" value="➡️" />
+	</form>
 </div>
 
-<button (click)=submit()>submit</button>
 
 <div class="failed" *ngIf="has_failed">ACCESS DENIED</div>
