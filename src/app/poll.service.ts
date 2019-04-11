@@ -15,12 +15,10 @@ export class PollService {
   private pollPostUrl = 'http://127.0.0.1:5000/vote_';
 
   getResults(): Observable<PollResult> {
-  	var r = this.http.get<PollResult>(this.pollGetUrl);
-    return r;
+  	return this.http.get<PollResult>(this.pollGetUrl);
   }
 
   updateResults(person: string) {
-    console.log("updating");
   	this.http.post<PollResult>(this.pollPostUrl+person,"").subscribe();
   }
 }

@@ -12,7 +12,11 @@ export class MemesService {
   private memeUrl = "http://127.0.0.1:5000/meme";
 
   getImage():  Observable<Blob> {
-  	return this.http.get<Blob>(this.memeUrl);
+    var r = this.http.get<Blob>(this.memeUrl);
+    console.log(r);
+  	return r;
   }
+
+
 
 }

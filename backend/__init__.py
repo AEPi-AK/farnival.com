@@ -69,6 +69,7 @@ def create_app(test_config=None):
 
     @app.route('/meme')
     def meme():
+        print("dd")
         photos_directory = "backend/farnam/"
         captions_file = "backend/captions.txt"
 
