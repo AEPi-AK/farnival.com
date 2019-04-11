@@ -9,6 +9,7 @@ import { MemesService } from '../memes.service';
 })
 export class MemesComponent implements OnInit {
   image: Blob;
+  memeUrl = `http://${window.location.hostname}:5000/meme`;
 
   constructor(private memesService: MemesService) { }
 
@@ -18,6 +19,10 @@ export class MemesComponent implements OnInit {
 
   getImage() {
   	this.memesService.getImage().subscribe(image => this.image = image);
+
+
   }
+
+
 
 }
