@@ -3,6 +3,12 @@ import os
 from flask import Flask
 from flask_cors import CORS
 from flask import json
+from flask import send_file
+
+from os import listdir
+import random
+
+from memegenerator import make_meme
 
 def create_app(test_config=None):
     # create and configure the app
@@ -12,6 +18,8 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
+
+
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -59,7 +67,21 @@ def create_app(test_config=None):
         d.commit()
         return votes()
 
- 
+    @app.route('/meme')
+    def meme():
+        photos_directory = "backend/farnam/"
+        captions_file = "backend/captions.txt"
+
+        photos = listdir(photos_directory)
+        captions = open(captions_file,"r").read().split('\n')
+
+        photo = photos_directory+random.choice(photos)
+        caption = random.choice(captions)
+        cap_split = str.split(caption)
+        top_caption = " ".join(cap_split[0:(int)(len(cap_split)/2)])
+        bottom_caption = " ".join(cap_split[(int)(len(cap_split)/2):])
+        make_meme(top_caption,bottom_caption,photo)
+        send_file("temp.png")
 
     return app
 
