@@ -82,7 +82,12 @@ def create_app(test_config=None):
         top_caption = " ".join(cap_split[0:(int)(len(cap_split)/2)])
         bottom_caption = " ".join(cap_split[(int)(len(cap_split)/2):])
         make_meme(top_caption,bottom_caption,photo)
-        return send_file("../temp.png")
+        r = send_file("../temp.png")
+        r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        r.headers["Pragma"] = "no-cache"
+        r.headers["Expires"] = "0"
+        r.headers['Cache-Control'] = 'public, max-age=0'
+        return r
 
     return app
 
